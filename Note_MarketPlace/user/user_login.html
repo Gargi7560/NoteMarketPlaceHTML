@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--important meta tags-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Title-->
+    <title>Notes MarketPlace</title>
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/login/favicon.ico">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!--Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Responsive CSS-->
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body data-spy="scroll" class="overflow-auto">
+
+    <!--Login Page-->
+    <section id="login">
+
+        <!--Background Image-->
+        <div class="back-cover-img" style="background-image: url(images/login/banner-with-overlay.jpg);"></div>
+
+        <!--Inner Content-->
+        <div class="center-div">
+            <div class="container">
+                <div class="content-box-sm">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-2 col-sm-1 col-xs-0"></div>
+
+                        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+                            <div class="login-content">
+                                <div class="login-logo">
+                                    <img src="images/login/top-logo.png" alt="Logo" class="img-responsive note-img">
+                                </div>
+                                <div class="login-details">
+                                    <div class="home-heading">
+                                        <span class="common-heading-1 center_heading-1">Login</span>
+                                        <p class="center_heading-1">Enter your email address and password to login</p>
+                                    </div>
+                                    <form>
+                                        <div class="form-group form-common">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control input_val" id="email" placeholder="Enter your email">
+
+
+                                            <span class="spnValMsg">The email address that you've entered is incorrect</span>
+                                        </div>
+                                        <div class="form-group form-common">
+                                            <label for="password">Password</label>
+                                            <a href="#" class="btn-blue pull-right">Forgot Password?</a>
+                                            <input type="password" class="form-control input_val" id="password" placeholder="Enter your password">
+                                            <i class="common-icon pull-right toggle-password" toggle="#password"><img src="images/login/eye.png" /></i>
+
+                                            <span class="spnValMsg">The password that you've entered is incorrect</span>
+                                        </div>
+
+
+                                        <div class="form-group form-check form-common">
+                                            <input type="checkbox" class="form-check-input checkbox-common" id="Check1">
+                                            <label class="form-check-label check-lab1" for="Check1">Remember Me</label>
+                                        </div>
+                                        <div class="general-btn">
+                                            <button type="button" class="btn btn-primary btn-lg btn-block btn-purple">LOGIN</button>
+                                        </div>
+                                        <div class="sign-up">
+                                            <span class="sign-btn">Don't have an account?</span>
+                                            <a href="#" class="btn-blue">Sign Up</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-2 col-sm-1 col-xs-0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--JQuery-->
+    <script src="js/jquery.min.js"></script>
+
+    <!--Bootstrap JS-->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

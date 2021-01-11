@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--important meta tags-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Title-->
+    <title>Notes MarketPlace</title>
+    
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/login/favicon.ico">
+    
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!--Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Responsive CSS-->
+    <link rel="stylesheet" href="css/responsive.css">
+    
+</head>
+
+<body data-spy="scroll" class="overflow-auto">
+
+    <!--Change Password Page-->
+    <section id="change_pwd">
+           
+        <!--Background Image-->
+        <div class="back-cover-img" style="background-image: url(images/login/banner-with-overlay.jpg);"></div>
+        
+        <!--Inner Content-->
+        <div class="center-div">
+        <div class="container">
+            <div class="content-box-sm">
+            <div class="row">
+                <div class="col-lg-3 col-md-2 col-sm-1 col-xs-0"></div>
+                <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+                    <div class="login-content">
+                        <div class="login-logo">
+	                       <img src="images/login/top-logo.png" alt="Logo" class="img-responsive note-img">
+	                    </div>
+                        <div class="login-details">
+                            <div class="home-heading">
+                                <span class="common-heading-1 center_heading-1">Change Password</span>
+                                <p class="center_heading-1">Enter your new password to change your password</p>    
+                            </div>
+                            <form>
+	                            <div class="form-group form-common">
+	                                	<label for="old_password">Old Password</label>
+	                                    <input type="password" class="form-control input_val" id="old_password" placeholder="Enter your old password">
+	                                    <i class="common-icon pull-right toggle-password" toggle="#old_password"><img src="images/login/eye.png" /></i>
+										
+                                    <span class="spnValMsg">The password that you've entered is incorrect</span>
+	                            </div>
+                                <div class="form-group form-common">
+	                                	<label for="new_password">New Password</label>
+	                                    <input type="password" class="form-control input_val" id="new_password" placeholder="Enter your new password">
+	                                    <i class="common-icon pull-right toggle-password" toggle="#new_password"><img src="images/login/eye.png" /></i>
+										
+                                    <span class="spnValMsg">The password that you've entered is invalid</span>
+	                            </div>
+	                            <div class="form-group form-common">
+	                                	<label for="con_password">Confirm Password</label>
+	                                    <input type="password" class="form-control input_val" id="con_password" placeholder="Re-enter your password">
+	                                    <i class="common-icon pull-right toggle-password" toggle="#con_password"><img src="images/login/eye.png" /></i>
+										
+                                    <span class="spnValMsg">The passwords do not match</span>
+	                            </div>
+	                            <div class="general-btn">
+                                    <button type="button" class="btn btn-primary btn-lg btn-block btn-purple">SUBMIT</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-2 col-sm-1 col-xs-0"></div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    
+    <!--JQuery-->
+    <script src="js/jquery.min.js"></script>
+
+    <!--Bootstrap JS-->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+    
+</body>
+
+</html>
