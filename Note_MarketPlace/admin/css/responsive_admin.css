@@ -1,0 +1,344 @@
+/* =====================================
+        Mobile Navigation
+======================================== */
+.logo-header {
+    position: relative;
+}
+
+#mobile-nav-open-btn {
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 3;
+    position: absolute;
+    right: 15px;
+    top: 23px;
+    /*Hide mobile nav open btn*/
+    display: none;
+}
+
+.sticky-header #mobile-nav-open-btn {
+    color: #6255a5;
+}
+
+#mobile-nav {
+    /* by default, mobile nav will be hidden with 0% */
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, .9);
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+    overflow-y: hidden;
+}
+
+#mobile-nav-close-btn {
+    font-family: Open Sans, sans-serif;
+    font-size: 60px;
+    color: #6255a5;
+    font-weight: 400;
+    cursor: pointer;
+    position: absolute;
+    top: -9px;
+    right: 13px;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+#mobile-nav-content {
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+    top: 10%;
+}
+
+#mobile-nav ul {
+    padding-left: 0;
+}
+
+#mobile-nav ul li {
+    margin-bottom: 20px;
+    display: inherit;
+}
+
+#mobile-nav a {
+    font-family: Open Sans, sans-serif;
+    font-size: 18px;
+    color: #212226;
+    font-weight: 400;
+    display: inline;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+#mobile-nav a:hover,
+#mobile-nav a:focus,
+#mobile-nav-close-btn:hover,
+#mobile-nav-close-btn:focus {
+    color: #6255a5;
+    background: none;
+}
+#mobile-nav .menu-navigation .dropdown .dropdown-menu .dropdown-item {
+    color: #000 !important;
+    font-size: 16px;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    display: block;
+}
+
+#mobile-nav .menu-navigation .dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: #6255a5;
+    color: #fff !important;
+}
+
+#mobile-nav .menu-navigation .dropdown .dropdown-menu .pur_col {
+    color: #6255a5 !important;
+}
+/* =====================================
+        Bootstrap 3 Media Queries
+======================================== */
+
+/*Large Devices (Desktops & Laptops)*/
+@media (min-width: 1200px) {
+
+    /*Notes Details*/
+    #admin_notes_details .container {
+        max-width: 1140px;
+        min-width: 1140px;
+    }
+}
+
+/* Medium Devices (Landscape Tablets & Medium Desktops) */
+@media (max-width: 1199px) {
+
+    /*Login Page*/
+    .login-details {
+        padding: 30px;
+    }
+
+    /*Navigation*/
+    .site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation > li a {
+        line-height: 20px;
+        font-weight: 400;
+        color: #fff;
+    }
+
+    .site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation > li {
+        padding: 0 10px;
+    }
+
+    /*Customer Review*/
+    .cust_review .val_content {
+        font-size: 15px;
+    }
+
+    .cust_review {
+        padding: 20px;
+    }
+
+    .responsive-wrapper-padding-bottom-90pct {
+        padding-bottom: 117%;
+    }
+
+    /*Pagination*/
+    .pagination a {
+        margin-left: 0px;
+    }
+}
+
+/*Small Devices (Portrait Tablets & Small Desktops) */
+@media (max-width: 992px) {
+
+    /*navigation*/
+    .site-header .header-wrapper .logo-wrapper a {
+        font-size: 50px;
+    }
+
+    .site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation > li {
+        padding: 0 5px;
+    }
+
+    .site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation > li a {
+        line-height: 20px;
+        font-weight: 200;
+        font-size: 13px;
+    }
+
+    .site-header .header-wrapper .logo-wrapper img {
+        width: 150px;
+        height: 35px;
+    }
+
+    /*Dashboard*/
+    .fix_height_dashboard {
+        height: 167px;
+    }
+
+    .btn-purple {
+        font-size: 15px;
+    }
+
+    .form-inline .small_device {
+        width: 160px;
+        margin-right: 0.5rem;
+    }
+
+    /*Notes Details*/
+    .notes_Details_ul li {
+        font-size: 15px;
+    }
+
+    /*Member Details*/
+    #member_details .admin_img img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /*Spam report*/
+    #spam_report .small_pad_20 .common-heading-1 {
+        font-size: 28px;
+    }
+
+    /*Manage System Configuration*/
+    .picture_bottom_2 {
+        bottom: 230px;
+    }
+    
+    .down_fix_width {
+        max-width: 100px;
+    }
+    .left_mid_device {
+        float: left;
+    }
+}
+
+/* Extra Small Devices (Landscape Phone & Portrait Tablets) */
+@media (max-width: 767px) {
+
+    /*Generic */
+    p {
+        font-size: 13px;
+    }
+
+    .container label {
+        font-size: 13px;
+        ;
+    }
+
+    input {
+        font-size: none;
+    }
+
+    .row_fix_bottom_30 {
+        padding-bottom: 30px;
+    }
+
+    /* Show mobile nav open btn */
+    #mobile-nav-open-btn {
+        display: block;
+    }
+
+    /*Login Page*/
+    .common-heading-1 {
+        font-size: 28px;
+    }
+
+    .login-details a {
+        font-size: 13px;
+    }
+
+    .spnValMsg {
+        font-size: 11px;
+    }
+
+    .sign-up span {
+        font-size: 13px;
+    }
+
+    .successMsg {
+        font-size: 11px;
+    }
+
+    /*all small heading*/
+    .small_pad_20 .small-heading {
+        font-size: 20px;
+    }
+
+    .left_small_device {
+        float: left;
+        padding-top: 20px;
+    }
+
+    /*Footer*/
+    .admin-footer {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .admin-footer .admin-footer-content {
+        float: none;
+    }
+
+    /*Members Details*/
+    .vertical_bordered {
+        border-right: none;
+    }
+    
+    
+    /*Manage System Configuration*/
+    .picture_bottom_2 {
+        bottom: 215px;
+    }
+}
+
+/* Extra Small Devices (Landscape Phone & Portrait Tablets) */
+@media (max-width: 576px) {
+    .btn-purple {
+        margin-right: 0.5rem;
+    }
+
+    .left_small_device {
+        padding-top: 0px;
+    }
+
+    .seller {
+        padding-bottom: 20px;
+        max-width: 323px;
+    }
+    
+    /*Manage System Configuration*/
+    .picture_bottom_2 {
+        bottom: 210px;
+    }
+    
+}
+
+/* Extra Small Devices (Portrait Phone & Smaller Tablets) */
+@media (max-width: 481px) {
+
+    .form-check {
+        padding-left: 0;
+    }
+
+    .form-check-input {
+        margin: 0;
+    }
+
+    .common-heading-1 {
+        font-size: 26px;
+    }
+
+    /*Notes Details*/
+    .notes_Details_ul li {
+        font-size: 13px;
+    }
+    
+    /*Manage System Configuration*/
+    .picture_bottom_2 {
+        bottom: 209px;
+    }
+}
