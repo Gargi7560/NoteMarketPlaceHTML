@@ -77,7 +77,7 @@
 
         $validate = validate();
 
-        if($validate[0]=='success1'){
+        if($validate[0]=='success'){
 
         unset($validate);
             
