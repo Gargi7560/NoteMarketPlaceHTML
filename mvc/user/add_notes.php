@@ -141,7 +141,9 @@ if(isset($_REQUEST['save'])){
             
                 $query = "INSERT INTO notedetails (SellerID,StatusID,ActionByID,Title,CategoryID,NoteTypeID,NumberOfPages,Description,UniversityName,CountryID,Course,CourseCode,Professor,SellingModeID,SellingPrice,CreatedDate,CreatedBy,ModifiedDate,ModifiedBy,IsActive) VALUES
                 (".$_SESSION['user_id'].",".$draftID.",".$defaultUserID.",'".$title."',".$catType.",".$selectType.",'".$numPage."','".$description."','".$insName."',".$country.",'".$courseName."','".$courseCode."','".$ProfName."','".$sellFor."','".$sellPrice."',NOW(),'".$_SESSION['user_id']."',NOW(),'".$_SESSION['user_id']."',1) " ;
-            
+				
+                $current_note_id = $db_handle->insertQuery($query);
+
                 if(!empty($current_note_id)){
 
                     $new_Display_Pic_File_Name = "";
