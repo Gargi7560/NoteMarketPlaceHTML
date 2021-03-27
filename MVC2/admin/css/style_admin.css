@@ -1,0 +1,814 @@
+/* =====================================
+                Html, Body
+======================================== */
+
+html,
+body {
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "open Sans", sans-serif;
+}
+
+p {
+    font-family: "open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+section {
+    background: #fff;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pad_120_for_pages {
+    padding-top: 120px;
+}
+
+.pad_100_for_pages {
+    padding-top: 100px;
+}
+
+.fix_width_table {
+    min-width: 1115px;
+}
+
+.fix_width_big_table {
+    min-width: 1370px;
+}
+
+.table_head_fix_width {
+    width: 100px;
+}
+
+.table_big_head_fix_width {
+    width: 152px;
+}
+
+/* =====================================
+                Login
+======================================== */
+.back-cover-img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%)translateY(-50%);
+    transform: translateX(-50%)translateY(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+}
+
+.center-div {
+    min-height: 100%;
+    /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh;
+    /* These two lines are counted as one :-)       */
+    display: flex;
+    align-items: center;
+}
+
+.login-content {
+    text-align: center;
+}
+
+.note-img {
+    padding-bottom: 25px;
+}
+
+.login-details {
+    background: #fff;
+    padding: 50px;
+    border-radius: 3px;
+}
+
+.container label {
+    float: left;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+}
+
+.login-details a {
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #6255a5;
+    margin-bottom: 10px;
+}
+
+.home-heading .center_heading-1 {
+    padding-bottom: 15px;
+}
+
+.home-heading p {
+    margin: 0;
+}
+
+/* =====================================
+                Buttons
+======================================== */
+.general-btn {
+    padding-top: 30px;
+}
+
+.btn-purple {
+    background-color: #6255a5;
+    border-radius: 3px;
+    font-family: Open Sans;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+}
+.btn-review {
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 600;
+    width: 100px;
+}
+.btn-green {
+    background-color: #28a745;
+}
+
+.btn-red {
+    background-color: #ff3636;
+}
+
+.btn-grey {
+    background-color: #cccccc;
+}
+
+.small-btn-1 {
+    font-style: Open Sans;
+    font-size: 18px;
+}
+
+.small-btn-2 {
+    font-style: Open Sans;
+    font-size: 18px;
+    font-style: 600;
+    text-transform: uppercase;
+    border-color: #fff !important;
+    color: #fff !important;
+    border-radius: 0;
+}
+
+/* =====================================
+            Headings
+======================================== */
+.common-heading-1 {
+    font-family: Open Sans;
+    font-size: 34px;
+    font-weight: 600;
+    /*line-height: 38px;*/
+    color: #6255a5;
+    display: block;
+}
+
+.left_heading-1 {
+    text-align: left;
+}
+
+.main_heading {
+    font-size: 48px !important;
+    color: #fff;
+    line-height: 100%;
+}
+
+.middle-heading {
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #333333;
+}
+
+.small-heading-1 {
+    font-family: Open Sans;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #6255a5;
+}
+
+.home-heading .spnValMsg {
+    color: #006400;
+    text-align: center;
+    float: inherit;
+    display: inline;
+    visibility: visible;
+}
+
+/* =====================================
+    Form - login/change/forgot/signup
+======================================== */
+.form-common {
+    margin: 0px;
+    padding-top: 30px;
+}
+
+.checkbox-common {
+    float: left;
+    border: 1px solid #d1d1d1;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    position: static;
+}
+
+.login-details .form-check {
+    padding-bottom: 30px;
+}
+
+.check-lab1 {
+    padding-top: 10px !important;
+    padding-left: 10px !important;
+}
+
+.sign-up {
+    padding-top: 20px;
+}
+
+.common-icon {
+    position: relative;
+    top: -32px;
+    right: 10px;
+}
+
+.middle-icon {
+    position: relative;
+    top: -85px;
+    right: 215px;
+}
+
+.input_val:active,
+.input_val:focus {
+    border-color: #FF3636;
+    border-left: 3px solid #FF3636;
+}
+
+#default_note_picture,
+#default_profile_picture {
+    background: url('../images/Profile/upload.png') no-repeat center 20px;
+    height: 92px;
+    text-align: center;
+    position: relative;
+    padding: 90px 0 0 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+#profile_picture {
+    background: url('../images/Profile/upload.png') no-repeat center 20px;
+    height: 92px;
+    text-align: center;
+    position: relative;
+    padding: 90px 0 0 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+.picture_bottom {
+    position: absolute;
+    bottom: 62px;
+    right: 2px;
+    text-align: center;
+    color: gray !important;
+}
+.picture_bottom_2 {
+    position: absolute;
+    bottom: 215px;
+    right: 2px;
+    text-align: center;
+    color: gray !important;
+}
+#upload_note {
+    background: url('../images/Add-notes/upload-note.svg') no-repeat center 5px;
+    min-height: 90px;
+    text-align: center;
+    position: relative;
+    padding-top: 10%;
+}
+
+.top-heading {
+    padding-top: 60px;
+}
+
+.spnValMsg {
+    font-family: Open Sans;
+    font-size: 13px;
+    font-weight: 300;
+    color: #FF3636;
+    text-align: left;
+    float: left;
+    padding-top: 5px;
+    display: inline;
+    min-height: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    visibility: hidden;
+}
+
+.successMsg {
+    font-family: Open Sans;
+    font-size: 13px;
+    font-weight: 300;
+    color: #006400;
+    text-align: center;
+    float: inherit;
+    display: inline;
+    min-height: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    visibility: visible;
+}
+
+/* =====================================
+                Table
+======================================== */
+.icon_space {
+    padding-right: 15px;
+}
+
+/* =====================================
+                Sign Up
+======================================== */
+.successMsg img {
+    height: 18px;
+}
+
+/* =====================================
+                Content Boxes
+======================================== */
+.content-box-lg {
+    padding: 120px 0;
+}
+
+.content-box-md {
+    padding: 100px 0;
+}
+
+.content-box-sm {
+    padding: 60px 0;
+}
+
+.content-box-xs {
+    padding: 30px 0;
+}
+
+/* =====================================
+            Admin-Profile
+======================================== */
+#admin_login .container label,
+#admin_forgot_pwd .container label {
+    width: auto;
+}
+
+.container label {
+    width: 100%;
+}
+
+/* =====================================
+    Header - Navigation
+======================================== */
+.site-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.site-header .header-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 0 120px;
+    padding: 0;
+}
+
+.site-header .header-wrapper .logo-wrapper a {
+    font-size: 50px;
+}
+
+.site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation > li {
+    padding: 0 15px;
+}
+
+.site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation > li a {
+    line-height: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+
+.site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation > li a:hover {
+    color: #6255a5;
+}
+
+.site-header .dropdown .dropdown-menu .dropdown-item {
+    color: #000 !important;
+    font-size: 16px;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+}
+
+.site-header .dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: #6255a5;
+    color: #fff !important;
+}
+
+.site-header .dropdown .dropdown-menu .pur_col {
+    color: #6255a5 !important;
+}
+
+.site-header .navbar {
+    padding: 0;
+}
+
+/* White Navigation */
+.sticky-header .site-header {
+    box-shadow: 0 0 3px rgba(0, 0, 0, .11);
+    background: #fff;
+}
+
+.sticky-header .site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation > li a {
+    color: #000;
+    font-weight: 600;
+}
+
+.site-header .navigation-wrapper .btn-purple {
+    background-color: #fff;
+    border-radius: 3px;
+    font-family: Open Sans;
+    font-size: 16px;
+    text-transform: none;
+    color: #6255a5;
+}
+
+.sticky-header .navigation-wrapper .btn-purple {
+    background-color: #6255a5;
+    color: #fff;
+}
+.dropdown_width{
+  max-width: 200px;
+}
+/* =====================================
+            Footer
+======================================== */
+.admin-footer {
+    padding-bottom: 20px;
+}
+
+/* =====================================
+            Stars
+======================================== */
+.rate {
+    float: left;
+}
+
+.rate label {
+    margin-bottom: 0;
+}
+
+.rate:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+}
+
+.rate:not(:checked) > label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 25px;
+    color: #ccc;
+}
+
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+/* =====================================
+            Notes details
+======================================== */
+.small-heading {
+    font-family: Open Sans;
+    font-size: 24px;
+    font-weight: 600;
+    color: #6255a5;
+}
+
+.red_text {
+    font-size: 14px !important;
+    color: red !important;
+}
+
+#admin_notes_details .note_img img {
+    width: 100%;
+    height: 100%;
+}
+
+#admin_notes_details .small-heading {
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+.notes_Details_ul li {
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #333333;
+}
+
+.notes_Details_ul li .rate {
+    padding-top: 7px;
+}
+
+.notes_Details_ul span {
+    float: right;
+    color: #6255a5;
+    font-weight: 600;
+}
+
+.row_fix_bottom {
+    padding-bottom: 30px;
+}
+
+/* =====================================
+            Notes Preview
+======================================== */
+
+.set-border-note-pdf {
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+}
+
+.responsive-wrapper {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-wrapper img,
+.responsive-wrapper object,
+.responsive-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.responsive-wrapper-padding-bottom-90pct {
+    padding-bottom: 105%;
+}
+
+/* =====================================
+            Customer Reviews
+======================================== */
+.cust_review {
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    padding: 30px;
+}
+
+.cust_img {
+    width: 50px;
+    height: 50px;
+}
+
+.cust_review hr {
+    margin: 1rem;
+}
+
+/* =====================================
+                Dashboard
+======================================== */
+
+.verti_line {
+    border-right: 1px solid #d1d1d1;
+}
+
+.small_pad_20 {
+    padding: 20px 0;
+}
+
+.data_table {
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+}
+
+.data_table .table {
+    margin: 0;
+}
+
+.data_table .table tbody tr:hover {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.fade.in {
+    opacity: 1;
+}
+
+.modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.modal-backdrop .fade .in {
+    opacity: 0.5 !important;
+}
+
+.modal-backdrop.fade {
+    opacity: 0.5 !important;
+}
+
+.dashboard_border {
+    border: 1px solid #d1d1d1;
+    min-height: 140px;
+}
+
+.verti_center_padding {
+    padding-top: 30px;
+}
+
+.second_col_pur td:nth-child(2),
+.third_col_pur td:nth-child(3),
+.fifth_col_pur td:nth-child(5),
+.ninth_col_pur td:nth-child(9),
+.tenth_col_pur td:nth-child(10) {
+    color: #6255a5;
+}
+
+#members_page .table td:nth-child(6),
+#members_page .table td:nth-child(7),
+#members_page .table td:nth-child(8),
+#members_page .table td:nth-child(9) {
+    color: #6255a5;
+}
+
+#member_details .table td:nth-child(2),
+#member_details .table td:nth-child(5),
+#member_details .table td:nth-child(6) {
+    color: #6255a5;
+}
+
+.dropdown-control {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    background-image: url('../images/Profile/down-arrow.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    cursor: pointer;
+    background-size: 15px;
+    color: gray;
+}
+
+/* =====================================
+                Search Icon
+======================================== */
+.search_icon {
+    background: url('../images/Search/search.jpg') no-repeat left;
+    background-color: #fff !important;
+    padding-left: 45px;
+    background-position: 10px 10px;
+}
+
+/* =====================================
+                My Downloads
+======================================== */
+.pur_col {
+    color: #6255a5;
+}
+.merge {
+    display: flex;
+}
+/* =====================================
+            member_details(admin)
+======================================== */
+#member_details .admin_img img {
+    width: 100%;
+}
+
+#member_details .small_pad_20 .pur_col {
+    font-weight: 600;
+}
+
+.vertical_bordered {
+    border-right: 1px solid #d1d1d1;
+}
+
+/* =====================================
+            Pagination
+======================================== */
+.pagination-filters {
+    margin: auto;
+    display: block;
+    align-self: center;
+    padding: 30px 0;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: #333;
+    float: left;
+    margin-left: 20px;
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #6255a5;
+    color: #fff;
+    border-radius: 50%;
+}
+
+#pagination-filters .active {
+    color: #fff !important;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 50%;
+}
+
+/* =====================================
+            Add-Notes
+======================================== */
+#note_pre {
+    background: url('../images/Profile/upload.png') no-repeat center 20px;
+    min-height: 140px;
+    text-align: center;
+    position: relative;
+    padding-top: 10%;
+}
+
+/* =====================================
+            Downloaded Notes
+======================================== */
+.download_seller,
+.download_buyer {
+    float: left;
+    margin-right: .5rem;
+    width: auto;
+}
+
+/* =====================================
+    Notes Under Reviews
+======================================== */
+.seller_inline_padding {
+    padding-top: 40px;
+}
