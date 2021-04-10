@@ -111,7 +111,7 @@ if(isset($_REQUEST['submit'])) {
                     } catch (Exception $e) {
                         echo "Error in sending email. Mailer Error: {$mail->ErrorInfo}";
                     }
-                        $message = "Your password has been changed successfully and newly generated password is sent on your registered email address.";
+                        $message = 'Your password has been changed successfully and newly generated password is sent on your registered email address. Please <a href="user_login.php" style="color:#006400; font: inherit; "><b>Login</b></a> with your new password';
                 } else {
 
                     $validate[] = "Please contact administrator.";
