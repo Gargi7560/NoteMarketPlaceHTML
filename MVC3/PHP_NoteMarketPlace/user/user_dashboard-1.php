@@ -1,13 +1,15 @@
 <?php
-    session_start();
+
+    //Settings from Config file
+    include '../common/configuration.php';
+
+    //Session start
+    include 'manage_user_session.php';
 
     //Import database configuration
     require_once("../common/dbcontroller.php");
 	$db_handle = new DBController();
     
-    //Settings from Config file
-    include '../common/configuration.php';
-
     $soldNoteCtQuery = "SELECT COUNT(DownloadNoteID) AS soldNotes FROM downloadnotes WHERE IsSellerHasAllowedDownload = 1 AND SellerID = ".$_SESSION['user_id'];
 
     $soldNoteCtResult = $db_handle->runQuery($soldNoteCtQuery);

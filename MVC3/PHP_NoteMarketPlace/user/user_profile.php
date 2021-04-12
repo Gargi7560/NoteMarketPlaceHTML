@@ -1,5 +1,10 @@
 <?php
-    session_start();
+
+    //Settings from Config file
+    include '../common/configuration.php';
+
+    //Session start
+    include 'manage_user_session.php';
 
     global $error;
     $current_user_profile_id = 0;
@@ -8,9 +13,6 @@
     require_once("../common/dbcontroller.php");
 	$db_handle = new DBController();
     
-    //Settings from Config file
-    include '../common/configuration.php';
-
     if(isset($_SESSION['user_id'])){
         $folder_name = $uploadPath.$_SESSION['user_id']."/";
         

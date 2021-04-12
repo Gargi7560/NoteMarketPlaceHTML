@@ -1,5 +1,10 @@
 <?php 
-    session_start();
+
+    //Settings from Config file
+    include '../common/configuration.php';
+    
+    //Session start
+    include 'manage_admin_session.php';
 
     global $error;
     $current_admin_profile_id = 0;
@@ -8,9 +13,6 @@
     require_once("../common/dbcontroller.php");
 	$db_handle = new DBController();
     
-    //Settings from Config file
-    include '../common/configuration.php';
-
     //Get user data from users table from database
     if(!empty($_GET["user_id"]) && $_GET["user_id"] >0) {
         

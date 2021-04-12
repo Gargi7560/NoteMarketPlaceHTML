@@ -65,6 +65,7 @@ if(isset($_REQUEST['submit'])) {
                     $userId = $result[0]['UserID'];
                     $userFirstName = $result[0]['FirstName'];
                     $userLastName = $result[0]['LastName'];
+                    $userRoleID = $result[0]['UserRoleID'];
                     
                     $profileQuery = "SELECT ProfilePicture,UserID FROM userprofiledetails Where UserID = ".$userId;
             
@@ -79,6 +80,7 @@ if(isset($_REQUEST['submit'])) {
                     $_SESSION['user_fname'] = $userFirstName;
                     $_SESSION['user_lname'] = $userLastName;
                     $_SESSION['profile_pic'] = $profilePic;
+                    $_SESSION['user_roleID'] = $userRoleID;
                     
                     //Set Cookies
                     if(isset($_POST['remember'])){
@@ -86,7 +88,7 @@ if(isset($_REQUEST['submit'])) {
                         setcookie('password',$_POST['password'],time()+60*60*7);
                     }
                     
-                    if($result[0]['UserRoleID'] == $adminUserRoleID OR $result[0]['UserRoleID'] == $superAdminUserRoleID){
+                    if($userRoleID == $adminUserRoleID OR $userRoleID == $superAdminUserRoleID){
                         // Redirect User to Admin portal 
                         header("location:admin_dashboard-1.php");
                         exit();

@@ -1,13 +1,15 @@
 <?php
-    session_start();
+    
+    //Settings from Config file
+    include '../common/configuration.php';
+
+    //Session start
+    include 'manage_user_session.php';
 
     //Import database configuration
     require_once("../common/dbcontroller.php");
 	$db_handle = new DBController();
     
-    //Settings from Config file
-    include '../common/configuration.php';
-
     $limitDownload = 10;
     $sr_no = 1;
     $page = (isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 1;
@@ -84,7 +86,7 @@
                         echo '><img src="images/Dashboard/eye.png" alt="view" class="icon_space"></a></td>';
                         
                         echo '<td class="dropdown"><a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/Dashboard/dots.png" alt="confirmation" class="icon_space"></a>
-                        <div class="dropdown-menu">                  <a class="dropdown-item" href="#" onclick="allowDownloadBySeller(';
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#" onclick="allowDownloadBySeller(';
                         echo $value["DownloadNoteID"]; 
                         echo ')">Allow Download</a></div></td>';
                         echo "</tr>";

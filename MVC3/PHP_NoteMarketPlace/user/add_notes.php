@@ -1,5 +1,10 @@
 <?php
-    session_start();
+
+    //Settings from Config file
+    include '../common/configuration.php';
+
+    //Session start
+    include 'manage_user_session.php';
 
     global $error;
     $current_note_id = 0;
@@ -8,9 +13,6 @@
     //Import database configuration
     require_once("../common/dbcontroller.php");
 	$db_handle = new DBController();
-    
-    //Settings from Config file
-    include '../common/configuration.php';
     
     if(!empty($_GET["note_id"]) && $_GET["note_id"] > 0){
         $current_note_id = $_GET["note_id"];

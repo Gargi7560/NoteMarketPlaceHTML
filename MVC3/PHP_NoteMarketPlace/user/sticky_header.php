@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="header-wrapper">
                     <div class="logo-wrapper">
-                        <a class="navbar-brand" href="home_page.php"><img src="images/logo_pur/top-logo.png" alt="logo"></a> 
+                        <a class="navbar-brand" href="home.php"><img src="images/logo_pur/top-logo.png" alt="logo"></a> 
                                           
                         <!--Mobile Menu Open Button-->
                         <span id="mobile-nav-open-btn">&#9776;</span>

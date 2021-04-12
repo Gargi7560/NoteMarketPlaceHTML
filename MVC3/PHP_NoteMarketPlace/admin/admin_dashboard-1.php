@@ -1,12 +1,14 @@
 <?php
-    session_start();
+    
+    //Settings from Config file
+    include '../common/configuration.php';
+    
+    //Session start
+    include 'manage_admin_session.php';
 
     //Import database configuration
     require_once("../common/dbcontroller.php");
 	$db_handle = new DBController();
-
-    //Settings from Config file
-    include '../common/configuration.php';
 
     for ($i = 0; $i <= 5; $i++) {
       // Store the months in an array

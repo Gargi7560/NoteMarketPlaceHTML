@@ -1,5 +1,10 @@
 <?php
-    session_start();
+    
+    //Settings from Config file
+    include '../common/configuration.php';
+    
+    //Session start
+    include 'manage_admin_session.php';
 
     $current_category_id = 0;
 
@@ -7,9 +12,6 @@
     require_once("../common/dbcontroller.php");
 	$db_handle = new DBController();
     
-    //Settings from Config file
-    include '../common/configuration.php';
-
     //Get category data from categories table from database
     if(!empty($_GET["category_id"]) && $_GET["category_id"] >0) {
         

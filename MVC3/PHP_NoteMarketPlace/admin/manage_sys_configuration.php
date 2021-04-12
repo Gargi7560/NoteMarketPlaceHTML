@@ -1,14 +1,15 @@
 <?php
 
-    session_start();
+    //Settings from Config file
+    include '../common/configuration.php';
+    
+    //Session start
+    include 'manage_admin_session.php';
     
     //Import database configuration
     require_once("../common/dbcontroller.php");
 	$db_handle = new DBController();
     
-    //Settings from Config file
-    include '../common/configuration.php';
-
     //Insert and update query for support email 
     if(isset($_POST['supportEmail'])) {
         $supportEmail = $_POST['supportEmail'];

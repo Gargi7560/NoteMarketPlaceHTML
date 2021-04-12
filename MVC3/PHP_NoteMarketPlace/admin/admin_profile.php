@@ -1,5 +1,10 @@
 <?php 
-    session_start();
+    
+    //Settings from Config file
+    include '../common/configuration.php';
+    
+    //Session start
+    include 'manage_admin_session.php';
 
     global $error;
     $current_admin_profile_id = 0;
@@ -7,9 +12,6 @@
     //Import database configuration
     require_once("../common/dbcontroller.php");
 	$db_handle = new DBController();
-    
-    //Settings from Config file
-    include '../common/configuration.php';
     
     if(isset($_SESSION['user_id'])){
         $folder_name = $adminUploadPath.$_SESSION['user_id']."/";

@@ -1,13 +1,15 @@
 <?php
-    session_start();
+    
+    //Settings from Config file
+    include '../common/configuration.php';
+    
+    //Session start
+    include 'manage_admin_session.php';
 
     //Import database configuration
     require_once("../common/dbcontroller.php");
 	$db_handle = new DBController();
     
-    //Settings from Config file
-    include '../common/configuration.php';
-
     $message_sent = false;
 
     $downloadNoteID = (isset($_POST['downloadNoteID']) && !empty($_POST['downloadNoteID'])) ? ($_POST['downloadNoteID']) : 0;

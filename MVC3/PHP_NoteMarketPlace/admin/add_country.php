@@ -1,5 +1,10 @@
 <?php
-    session_start();
+    
+    //Settings from Config file
+    include '../common/configuration.php';
+    
+    //Session start
+    include 'manage_admin_session.php';
 
     $current_country_id = 0;
 
@@ -7,9 +12,6 @@
     require_once("../common/dbcontroller.php");
 	$db_handle = new DBController();
     
-    //Settings from Config file
-    include '../common/configuration.php';
-
     //Get country data from countries table from database
     if(!empty($_GET["country_id"]) && $_GET["country_id"] >0) {
         

@@ -1,9 +1,11 @@
 <?php
-    session_start();
-    
+
     //Settings from Config file
     include '../common/configuration.php';
 
+    //Session start
+    include 'manage_user_session.php';
+    
     //include PHPMailer classes to your PHP file for sending email
     require '../common/src/Exception.php';
     require '../common/src/PHPMailer.php';

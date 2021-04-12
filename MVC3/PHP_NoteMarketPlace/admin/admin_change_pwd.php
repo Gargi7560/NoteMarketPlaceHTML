@@ -1,10 +1,12 @@
 <?php
-    session_start();
     
-    global $error;
-
     //Settings from Config file
     include '../common/configuration.php';
+    
+    //Session start
+    include 'manage_admin_session.php';
+    
+    global $error;
     
     //Import database configuration
     require_once("../common/dbcontroller.php");
