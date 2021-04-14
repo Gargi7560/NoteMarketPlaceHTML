@@ -72,11 +72,19 @@
                         <div id="mobile-nav-content">
                            <ul class="menu-navigation">
                                <li><a href="search_note.php" class="val_content">Search Notes</a></li>
-                               <li><a href="user_dashboard-1.php" class="val_content">Sell Your Notes</a></li>
+                               <li>
+                                    <?php if(isset($_SESSION['user_logged_in'])){ ?>
+                                    <a href="user_dashboard-1.php" class="val_content">Sell Your Notes</a>
+                                    <?php } else { ?>
+                                    <a href="user_login.php" class="val_content">Sell Your Notes</a>
+                                    <?php } ?>
+                                    </li>
                                <li><a href="FAQ.php" class="val_content">FAQ</a></li>
                                <li><a href="contact_us.php" class="val_content">Contact Us</a></li>
+                               
+                               <?php if(isset($_SESSION['user_logged_in'])){ ?>  
                                <li class="dropdown">
-                                  
+                                
                                    <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                        <img src="<?php 
                                             echo $profileResult[0]["ProfilePicture"];
@@ -88,21 +96,21 @@
                                        <a class="dropdown-item" href="my_sold_notes.php">My Sold Notes</a>
                                        <a class="dropdown-item" href="my_rejected_notes.php">My Rejected Notes</a>
                                        <a class="dropdown-item" href="user_change_pwd.php">Change Password</a>
-                                       <a class="dropdown-item pur_col" href="#">LOGOUT</a>
+                                       <a class="dropdown-item pur_col" href="logout.php">LOGOUT</a>
                                    </div>
                                </li>
-                               <li>
-                               <?php if( $_SESSION['user_logged_in']): ?>
-                                <a href="logout.php">
-                                   <button type="butoon" class="btn btn-outline-primary btn-purple">Logout</button> 
-                                </a>
-                            <?php else: ?>
-                            <a href="user_login.php">
-                                <button type="butoon" class="btn btn-outline-primary btn-purple">Login</button>
-                            </a>
-                            <?php endif; ?>
-                                    
-                               </li>
+                               <?php } ?>
+                                <li>
+                                    <?php if(isset($_SESSION['user_logged_in'])){ ?>
+                                        <a href="logout.php">
+                                           <button type="button" class="btn btn-outline-primary btn-purple">Logout</button> 
+                                        </a>
+                                    <?php } else { ?>
+                                    <a href="user_login.php">
+                                        <button type="button" class="btn btn-outline-primary btn-purple">Login</button>
+                                    </a>
+                                    <?php } ?>
+                                </li>
                            </ul>
 
                         </div>
