@@ -55,7 +55,6 @@
 
     echo '<div class="data_table">
         <div class="table-responsive">
-        <input type="hidden" id="hdnSortColumn" />
             <table id="dbTbl_'.$search_Status.'" class="table fix_width_table">
                 <thead>
                     <tr>
@@ -78,21 +77,21 @@
     
         if($value['StatusID'] == $draftID){
             echo '<td>
-            <a href="http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/add_notes.php?note_id='. $value['NoteDetailID']
+            <a href="'.$http_protocol.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/add_notes.php?note_id='. $value['NoteDetailID']
                 .'"><img src="images/Dashboard/edit.png" alt="edit" class="icon_space"></a>
             <a onclick="deleteNote('.$value['NoteDetailID'].')"><img src="images/Dashboard/delete.png" alt="delete"></a>
              </td>';
         } else if($value['StatusID'] == $submittedForReviewID) {
-            echo '<td>
-            <img src="images/Dashboard/eye.png" alt="view" class="icon_space">
+            echo '<td><a href="'.$http_protocol.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/note_details.php?note_id=".$value['NoteDetailID'].'">
+            <img src="images/Dashboard/eye.png" alt="view" class="icon_space"></a>
              </td>';
         } else if($value['StatusID'] == $inReviewID) {
-            echo '<td>
-            <img src="images/Dashboard/eye.png" alt="view" class="icon_space">
+            echo '<td><a href="'.$http_protocol.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/note_details.php?note_id=".$value['NoteDetailID'].'">
+            <img src="images/Dashboard/eye.png" alt="view" class="icon_space"></a>
              </td>';
         } else if($value['StatusID'] == $publishedID) {
-            echo '<td>
-            <img src="images/Dashboard/eye.png" alt="view" class="icon_space">
+            echo '<td><a href="'.$http_protocol.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/note_details.php?note_id=".$value['NoteDetailID'].'">
+            <img src="images/Dashboard/eye.png" alt="view" class="icon_space"></a>
              </td>';
         } 
         

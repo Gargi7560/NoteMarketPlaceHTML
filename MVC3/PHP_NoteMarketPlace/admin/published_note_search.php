@@ -76,7 +76,6 @@
     if($publishedNoteResult != "") {
         echo '<div class="data_table">
                 <div class="table-responsive">
-                <input type="hidden" id="hdnSortColumn" />
                     <table class="table fix_width_big_table text-center tenth_col_pur second_col_pur">
                         <thead>
                             <tr>

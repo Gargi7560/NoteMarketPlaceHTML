@@ -1,18 +1,3 @@
-<?php
-
-    //Import database configuration
-    require_once("../common/dbcontroller.php");
-	$db_handle = new DBController();
-
-    //FaceBook URL 
-    $defaultFacebookUrl = "SELECT `Key`,`Value` From systemconfiguration WHERE `Key` = 'FacebookUrl'";
-
-    $defaultFacebookUrlResult = $db_handle->runQuery($defaultFacebookUrl);
-
-    $facebookUrl = $defaultFacebookUrlResult[0]['Value'];
-
-?>
- 
 
 <!--Footer Start-->
 

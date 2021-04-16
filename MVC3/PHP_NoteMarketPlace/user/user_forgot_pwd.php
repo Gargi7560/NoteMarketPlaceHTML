@@ -162,6 +162,42 @@ if(isset($_REQUEST['submit'])) {
 
     <!--Responsive CSS-->
     <link rel="stylesheet" href="css/responsive.css">
+    
+    <script type="text/javascript">
+
+    function forgotValidateEmail() {
+
+        isForgotValidEmail = false;
+
+        if ($("#email").val() == "" || $("#email").val() == null || $("#email").val().trim().length == 0) {
+            $("#email").focusin();
+            $("#email").addClass("borderHighlight");
+            $("#emailVal").css("visibility", "visible");
+            $("#emailVal").html("Please fill out this field.");
+            isForgotValidEmail = false;
+        } else {
+            $("#email").removeClass("borderHighlight");
+            $("#emailVal").css("visibility", "hidden");
+            isForgotValidEmail = true;
+        }
+
+        return isForgotValidEmail;
+
+    }
+
+    function forgotValidateForm() {
+
+        isForgotValidateForm = false;
+
+        isForgotValidEmail = forgotValidateEmail();
+
+        if (isForgotValidEmail) {
+            isForgotValidateForm = true;
+        }
+
+        return isForgotValidateForm;
+    }
+    </script>
 
 </head>
 

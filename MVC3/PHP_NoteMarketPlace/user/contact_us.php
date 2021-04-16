@@ -179,6 +179,123 @@
     <!--Responsive CSS-->
     <link rel="stylesheet" href="css/responsive.css">
 
+    <script type="text/javascript">
+        
+        reOnlyAlphabet = /^[A-Za-z]+$/;
+        reForEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        reForPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{6,24}$/;
+
+        function validateContactFirstName() {
+
+            isValidContactFname = false;
+
+            if ($("#fname").val() == "" || $("#fname").val() == null || $("#fname").val().trim().length == 0) {
+                $("#fname").focusin();
+                $("#fname").addClass("borderHighlight");
+                $("#fnameVal").css("visibility", "visible");
+                $("#fnameVal").html("Please fill the firstname.");
+                isValidContactFname = false;
+            } else if (!reOnlyAlphabet.test($("#fname").val())) {
+                $("#fname").focusin();
+                $("#fname").addClass("borderHighlight");
+                $("#fnameVal").css("visibility", "visible");
+                $("#fnameVal").html("Please enter only alphabets.");
+                isValidContactFname = false;
+            } else {
+                $("#fname").removeClass("borderHighlight");
+                $("#fnameVal").css("visibility", "hidden");
+                isValidContactFname = true;
+            }
+
+            return isValidContactFname;
+
+        }
+
+        function validateContactEmail() {
+
+            isValidContactEmail = false;
+
+            if ($("#email").val() == "" || $("#email").val() == null || $("#email").val().trim().length == 0) {
+                $("#email").focusin();
+                $("#email").addClass("borderHighlight");
+                $("#emailVal").css("visibility", "visible");
+                $("#emailVal").html("Please fill the email.");
+                isValidContactEmail = false;
+            } else if (!reForEmail.test($("#email").val())) {
+                $("#email").focusin();
+                $("#email").addClass("borderHighlight");
+                $("#emailVal").css("visibility", "visible");
+                $("#emailVal").html("Please enter valid email.");
+                isValidContactEmail = false;
+            } else {
+                $("#email").removeClass("borderHighlight");
+                $("#emailVal").css("visibility", "hidden");
+                isValidContactEmail = true;
+            }
+
+            return isValidContactEmail;
+
+        }
+
+        function validateContactSubject() {
+
+            isValidContactSubject = false;
+
+            if ($("#subject").val() == "" || $("#subject").val() == null || $("#subject").val().trim().length == 0) {
+                $("#subject").focusin();
+                $("#subject").addClass("borderHighlight");
+                $("#subjectVal").css("visibility", "visible");
+                $("#subjectVal").html("Please fill the subject.");
+                isValidContactSubject = false;
+            } else {
+                $("#subject").removeClass("borderHighlight");
+                $("#subjectVal").css("visibility", "hidden");
+                isValidContactSubject = true;
+            }
+
+            return isValidContactSubject;
+
+        }
+
+        function validateContactComment() {
+
+            isValidContactComment = false;
+
+            if ($("#comment_contact").val() == "" || $("#comment_contact").val() == null || $("#comment_contact").val().trim().length == 0) {
+                $("#comment_contact").focusin();
+                $("#comment_contact").addClass("borderHighlight");
+                $("#comment_contactVal").css("visibility", "visible");
+                $("#comment_contactVal").html("Please fill out this field.");
+                isValidContactComment = false;
+            } else {
+                $("#comment_contact").removeClass("borderHighlight");
+                $("#comment_contactVal").css("visibility", "hidden");
+                isValidContactComment = true;
+            }
+
+            return isValidContactComment;
+
+        }
+
+        function validateContactForm() {
+
+            isValidateContactForm = false;
+
+            isValidContactFname = validateContactFirstName();
+            isValidContactEmail = validateContactEmail();
+            isValidContactSubject = validateContactSubject();
+            isValidContactComment = validateContactComment();
+
+            if (isValidContactFname && isValidContactEmail && isValidContactSubject && isValidContactComment) {
+                isValidateContactForm = true;
+            }
+
+            return isValidateContactForm;
+
+        }
+    
+    </script>
+   
     </head>
     
     <body data-spy="scroll" class="overflow-auto sticky-header">

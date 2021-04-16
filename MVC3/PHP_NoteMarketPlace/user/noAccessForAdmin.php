@@ -2,9 +2,6 @@
 
     //Settings from Config file
     include '../common/configuration.php';
-
-    //Session start
-    //include 'manage_user_session.php';
     
 ?>
 <!DOCTYPE html>

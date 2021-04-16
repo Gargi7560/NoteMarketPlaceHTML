@@ -374,6 +374,161 @@
     <link rel="stylesheet" href="css/responsive.css">
 
     <script type="text/javascript">
+        
+        reOnlyAlphabet = /^[A-Za-z]+$/;
+        reForEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        reForPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{6,24}$/;
+        
+        function validateTitle() {
+
+            isValidTitle = false;
+
+            if ($("#title").val() == "" || $("#title").val() == null) {
+                $("#title").focusin();
+                $("#title").addClass("borderHighlight");
+                $("#titleVal").css("visibility", "visible");
+                $("#titleVal").html("Please fill out this field.");
+                isValidTitle = false;
+            } else {
+                $("#title").removeClass("borderHighlight");
+                $("#titleVal").css("visibility", "hidden");
+                isValidTitle = true;
+            }
+            return isValidTitle;
+        }
+
+        function validateCatType() {
+
+            isValidCatType = false;
+
+            if ($("#catType").val() == 0) {
+                $("#catType").focusin();
+                $("#catType").addClass("borderHighlight");
+                $("#catTypeVal").css("visibility", "visible");
+                $("#catTypeVal").html("Please select anyone.");
+                isValidCatType = false;
+            } else {
+                $("#catType").removeClass("borderHighlight");
+                $("#catTypeVal").css("visibility", "hidden");
+                isValidCatType = true;
+            }
+            return isValidCatType;
+        }
+
+        function validateDisplayPicture() {
+
+            isValidDisplayPicture = false;
+
+            if ($("#hdnDisplayPicPath").val() == "") {
+                if ($("#displayPicture")[0].files.length != 0) {
+                    var ext = $('#displayPicture').val().split('.').pop().toLowerCase();
+                    if ($.inArray(ext, ['png', 'jpg', 'jpeg']) == -1) {
+                        $("#displayPicture").addClass("borderHighlight");
+                        $("#displayPictureVal").css("visibility", "visible");
+                        $("#displayPictureVal").html("Please upload jpg, jpeg, png files.");
+                        isValidDisplayPicture = false;
+                    } else {
+                        $("#displayPicture").removeClass("borderHighlight");
+                        $("#displayPictureVal").css("visibility", "hidden");
+                        isValidDisplayPicture = true;
+                    }
+                } else {
+                    $("#displayPicture").removeClass("borderHighlight");
+                    $("#displayPictureVal").css("visibility", "hidden");
+                    isValidDisplayPicture = true;
+                }
+            } else {
+                $("#displayPicture").removeClass("borderHighlight");
+                $("#displayPictureVal").css("visibility", "hidden");
+                isValidDisplayPicture = true;
+            }
+            return isValidDisplayPicture;
+        }
+
+        function validateNotes() {
+
+            isValidNotes = false;
+            var ext = $('#uploadNote').val().split('.').pop().toLowerCase();
+
+            if ($("#hdnUploadNotePath").val() == "") {
+                if ($("#uploadNote")[0].files.length == 0) {
+                    //$("#uploadNote").focusin();
+                    $("#uploadNote").addClass("borderHighlight");
+                    $("#uploadNoteVal").css("visibility", "visible");
+                    $("#uploadNoteVal").html("Please upload files.");
+                    isValidNotes = false;
+                } else if ($.inArray(ext, ['pdf']) == -1) {
+                    $("#uploadNote").addClass("borderHighlight");
+                    $("#uploadNoteVal").css("visibility", "visible");
+                    $("#uploadNoteVal").html("Please upload pdf files.");
+                    isValidNotes = false;
+                } else {
+                    $("#uploadNote").removeClass("borderHighlight");
+                    $("#uploadNoteVal").css("visibility", "hidden");
+                    isValidNotes = true;
+                }
+            } else {
+                $("#uploadNote").removeClass("borderHighlight");
+                $("#uploadNoteVal").css("visibility", "hidden");
+                isValidNotes = true;
+            }
+            return isValidNotes;
+        }
+
+        function validateDescription() {
+
+            isValidDescription = false;
+
+            if ($("#description").val() == "" || $("#description").val() == null) {
+                $("#description").focusin();
+                $("#description").addClass("borderHighlight");
+                $("#descriptionVal").css("visibility", "visible");
+                $("#descriptionVal").html("Please fill the description field.");
+                isValidDescription = false;
+            } else {
+                $("#description").removeClass("borderHighlight");
+                $("#descriptionVal").css("visibility", "hidden");
+                isValidDescription = true;
+            }
+            return isValidDescription;
+        }
+
+        function validateSellPrice() {
+
+            isValidSellPrice = false;
+
+            if ($("#sellPrice").val() == "" || $("#sellPrice").val() == null) {
+                $("#sellPrice").focusin();
+                $("#sellPrice").addClass("borderHighlight");
+                $("#sellPriceVal").css("visibility", "visible");
+                $("#sellPriceVal").html("Please fill the sell price.");
+                isValidSellPrice = false;
+            } else {
+                $("#sellPrice").removeClass("borderHighlight");
+                $("#sellPriceVal").css("visibility", "hidden");
+                isValidSellPrice = true;
+            }
+            return isValidSellPrice;
+        }
+
+        function validateAddNoteForm() {
+
+            isvalidAddNoteForm = false;
+
+            isValidTitle = validateTitle();
+            isValidCatType = validateCatType();
+            isValidDisplayPicture = validateDisplayPicture();
+            isValidNotes = validateNotes();
+            isValidDescription = validateDescription();
+            isValidSellPrice = validateSellPrice();
+            //isValidNotePreview = validateNotePreview();
+
+            if (isValidTitle && isValidCatType && isValidDisplayPicture && isValidNotes && isValidDescription && isValidSellPrice) {
+                isvalidAddNoteForm = true;
+            }
+            return isvalidAddNoteForm;
+        }
+        
         function updateNoteStatus(noteID) {
             $.ajax({
                 type: "GET",
@@ -383,8 +538,7 @@
                 },
                 success: function(data) {
                     $("#updateNoteModal").modal('toggle');
-                    header("location:user_dashboard-1.php");
-                    exit();
+                    window.location.replace("user_dashboard-1.php");
                 }
             });
         }
@@ -677,7 +831,7 @@
                                 <div class="form-group form-common">
                                     <label for="sellPrice">Sell Price *</label>
                                     <input type="text" class="form-control input_val" name="sellPrice" id="sellPrice" 
-                                    <?php if($current_note_id != 0){
+                                    <?php if($current_note_id != 0 && !empty($note_detail_result[0]['SellingPrice']) ) {
                                         echo " value = ".$note_detail_result[0]['SellingPrice'];
                                     }
                                     ?> placeholder="Enter your price" onblur="validateSellPrice();">

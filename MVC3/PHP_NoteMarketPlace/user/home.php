@@ -169,7 +169,7 @@
                                             </div>
                                             <div class="col-lg-9 col-md-8 col-sm-8 col-xs-7 verti_middle">
                                                 <span class="small-heading-1 left_heading-1">Walter Meller</span>
-                                                <p class="val_content">Founder & CEO, Matrix Group</p>
+                                                <p class="val_content">Founder &amp; CEO, Matrix Group</p>
                                             </div>
                                         </div>
                                         <div class="row">

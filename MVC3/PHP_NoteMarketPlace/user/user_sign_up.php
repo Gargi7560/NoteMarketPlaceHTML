@@ -166,7 +166,8 @@ if(isset($_REQUEST['submit'])) {
 		} else {
 			$validate[] = "Problem in registration. Try Again!";	 
 		}
-	} else {		    
+	
+    } else {		    
         $validate[] = "Email <b>".$email."</b> is already in use.";
 	}
     } else {
@@ -213,6 +214,155 @@ if(isset($_REQUEST['submit'])) {
 
     <!--Responsive CSS-->
     <link rel="stylesheet" href="css/responsive.css">
+    
+    <script type="text/javascript">
+
+        reOnlyAlphabet = /^[A-Za-z]+$/;
+        reForEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        reForPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{6,24}$/;
+
+        function validateFirstName() {
+
+            isValidFname = false;
+
+            if ($("#fname").val() == "" || $("#fname").val() == null || $("#fname").val().trim().length == 0) {
+                $("#fname").focusin();
+                $("#fname").addClass("borderHighlight");
+                $("#fnameVal").css("visibility", "visible");
+                $("#fnameVal").html("Please write your first name.");
+                isValidFname = false;
+            } else if (!reOnlyAlphabet.test($("#fname").val())) {
+                $("#fname").focusin();
+                $("#fname").addClass("borderHighlight");
+                $("#fnameVal").css("visibility", "visible");
+                $("#fnameVal").html("Please enter only alphabets.");
+                isValidFname = false;
+            } else {
+                $("#fname").removeClass("borderHighlight");
+                $("#fnameVal").css("visibility", "hidden");
+                isValidFname = true;
+            }
+            return isValidFname;
+        }
+
+        function validateLastName() {
+            isValidLname = false;
+            if ($("#lname").val() == "" || $("#lname").val() == null || $("#lname").val().trim().length == 0) {
+                $("#lname").focusin();
+                $("#lname").addClass("borderHighlight");
+                $("#lnameVal").css("visibility", "visible");
+                $("#lnameVal").html("Please write your last name.");
+                isValidLname = false;
+            } else if (!reOnlyAlphabet.test($("#lname").val())) {
+                $("#lname").focusin();
+                $("#lname").addClass("borderHighlight");
+                $("#lnameVal").css("visibility", "visible");
+                $("#lnameVal").html("Please enter only alphabets.");
+                isValidLname = false;
+            } else {
+                $("#lname").removeClass("borderHighlight");
+                $("#lnameVal").css("visibility", "hidden");
+                isValidLname = true;
+            }
+            return isValidLname;
+        }
+
+        function validateEmail() {
+
+            isValidEmail = false;
+
+            if ($("#email").val() == "" || $("#email").val() == null || $("#email").val().trim().length == 0) {
+                $("#email").focusin();
+                $("#email").addClass("borderHighlight");
+                $("#emailVal").css("visibility", "visible");
+                $("#emailVal").html("Please fill out email field.");
+                isValidEmail = false;
+            } else if (!reForEmail.test($("#email").val())) {
+                $("#email").focusin();
+                $("#email").addClass("borderHighlight");
+                $("#emailVal").css("visibility", "visible");
+                $("#emailVal").html("Please enter valid email.");
+                isValidEmail = false;
+            } else {
+                $("#email").removeClass("borderHighlight");
+                $("#emailVal").css("visibility", "hidden");
+                isValidEmail = true;
+            }
+            return isValidEmail;
+        }
+
+        function validatePassword() {
+
+            isValidPassword = false;
+
+            if ($("#password").val() == "" || $("#password").val() == null || $("#password").val().trim().length == 0) {
+                $("#password").focusin();
+                $("#password").addClass("borderHighlight");
+                $("#passwordVal").css("visibility", "visible");
+                $("#passwordVal").html("Please fill out password field.");
+                isValidPassword = false;
+            } else if (!reForPassword.test($("#password").val())) {
+                $("#password").focusin();
+                $("#password").addClass("borderHighlight");
+                $("#passwordVal").css("visibility", "visible");
+                $("#passwordVal").html("Please enter valid password.");
+                isValidPassword = false;
+            } else {
+                $("#password").removeClass("borderHighlight");
+                $("#passwordVal").css("visibility", "hidden");
+                isValidPassword = true;
+            }
+            return isValidPassword;
+        }
+
+        function validateConPassword() {
+
+            isValidConPassword = false;
+
+            if ($("#conPassword").val() == "" || $("#conPassword").val() == null || $("#conPassword").val().trim().length == 0) {
+                $("#conPassword").focusin();
+                $("#conPassword").addClass("borderHighlight");
+                $("#conPasswordVal").css("visibility", "visible");
+                $("#conPasswordVal").html("Please fill out confirm password field.");
+                isValidConPassword = false;
+            } else if (!reForPassword.test($("#conPassword").val())) {
+                $("#conPassword").focusin();
+                $("#conPassword").addClass("borderHighlight");
+                $("#conPasswordVal").css("visibility", "visible");
+                $("#conPasswordVal").html("Please enter valid confirm password");
+                isValidConPassword = false;
+            } else if ($('#password').val() != $('#conPassword').val()) {
+                $("#conPassword").focusin();
+                $("#conPassword").addClass("borderHighlight");
+                $("#conPasswordVal").css("visibility", "visible");
+                $("#conPasswordVal").html("Password and Confirm Password don't match.");
+                isValidConPassword = false;
+            } else {
+                $("#conPassword").removeClass("borderHighlight");
+                $("#conPasswordVal").css("visibility", "hidden");
+                isValidConPassword = true;
+            }
+            return isValidConPassword;
+        }
+
+        function validateForm() {
+
+            isValidForm = false;
+
+            isValidFname = validateFirstName();
+            isValidLname = validateLastName();
+            isValidEmail = validateEmail();
+            isValidPassword = validatePassword();
+            isValidConPassword = validateConPassword();
+
+            if (isValidFname && isValidLname && isValidEmail && isValidPassword && isValidConPassword) {
+                isValidForm = true;
+            }
+            return isValidForm;
+        }
+
+
+    </script>
 
 </head>
 

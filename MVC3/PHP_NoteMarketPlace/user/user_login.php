@@ -71,8 +71,18 @@ if(isset($_REQUEST['submit'])) {
             
                     $profileResult = $db_handle->runQuery($profileQuery);
                     
-                    $profilePic = $profileResult[0]['ProfilePicture'];
-                    
+                    if($profileResult > 0) {
+                        
+                        $profilePic = $profileResult[0]['ProfilePicture'];
+                        
+                    } else {
+                        
+                        $defaultProfilePic = "SELECT `Key`, `Value` FROM systemconfiguration WHERE `Key` = 'DefaultProfilePicture'";
+                            
+                        $defaultProfilePicResult = $db_handle->runQuery($defaultProfilePic);
+                        
+                        $profilePic = $defaultProfilePicResult[0]['Value'];
+                    }
                     session_start();
                     $_SESSION['user'] = $email;
                     $_SESSION['user_logged_in'] = true;
@@ -151,6 +161,73 @@ if(isset($_REQUEST['submit'])) {
 
     <!--Responsive CSS-->
     <link rel="stylesheet" href="css/responsive.css">
+
+    <script type="text/javascript">
+
+        reForEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        reForPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{6,24}$/;
+        
+        function loginValidateEmail() {
+
+            isLoginValidEmail = false;
+
+            if ($("#email").val() == "" || $("#email").val() == null || $("#email").val().trim().length == 0) {
+                $("#email").focusin();
+                $("#email").addClass("borderHighlight");
+                $("#emailVal").css("visibility", "visible");
+                $("#emailVal").html("Please fill out email field.");
+                isLoginValidEmail = false;
+            } else if (!reForEmail.test($("#email").val())) {
+                $("#email").focusin();
+                $("#email").addClass("borderHighlight");
+                $("#emailVal").css("visibility", "visible");
+                $("#emailVal").html("Please enter valid email.");
+                isValidEmail = false;
+            } else {
+                $("#email").removeClass("borderHighlight");
+                $("#emailVal").css("visibility", "hidden");
+                isLoginValidEmail = true;
+            }
+            return isLoginValidEmail;
+        }
+
+        function loginValidatePassword() {
+
+            isLoginValidPassword = false;
+
+            if ($("#password").val() == "" || $("#password").val() == null || $("#password").val().trim().length == 0) {
+                $("#password").focusin();
+                $("#password").addClass("borderHighlight");
+                $("#passwordVal").css("visibility", "visible");
+                $("#passwordVal").html("Please fill out password field.");
+                isLoginValidPassword = false;
+            } else if (!reForPassword.test($("#password").val())) {
+                $("#password").focusin();
+                $("#password").addClass("borderHighlight");
+                $("#passwordVal").css("visibility", "visible");
+                $("#passwordVal").html("Please enter valid password.");
+                isValidPassword = false;
+            } else {
+                $("#password").removeClass("borderHighlight");
+                $("#passwordVal").css("visibility", "hidden");
+                isLoginValidPassword = true;
+            }
+            return isLoginValidPassword;
+        }
+
+        function loginValidateForm() {
+
+            isLoginValidateForm = false;
+
+            isLoginValidEmail = loginValidateEmail();
+            isLoginValidPassword = loginValidatePassword();
+
+            if (isLoginValidEmail && isLoginValidPassword) {
+                isLoginValidateForm = true;
+            }
+            return isLoginValidateForm;
+        }
+    </script>
 
 </head>
 

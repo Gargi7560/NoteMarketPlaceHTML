@@ -50,7 +50,6 @@
     if($downloadResult != ""){
         echo '<div class="data_table">
             <div class="table-responsive">
-                <input type="hidden" id="hdnSortColumn" />
                 <table class="table fix_width_table second_col_pur">
                     <thead>
                         <tr>

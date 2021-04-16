@@ -131,8 +131,8 @@
                 $lname = $_POST['lname'];   
                 $email = $_POST['email'];
                
-                $dateOfBirth = !empty($_POST['dateOfBirth']) ? date_format(date_create($_POST['dateOfBirth']),"Y-m-d") : "NULL";
-               
+                $dateOfBirth = !empty($_POST['dateOfBirth']) ? "'".date_format(date_create($_POST['dateOfBirth']),"Y-m-d")."'" : "NULL";
+                              
                 $gender = !empty($_POST['selectGender']) && (int)$_POST['selectGender'] > 0  ? $_POST['selectGender'] : "NULL";
                
                 $phoneCode = !empty($_POST['selectPhoneCode']) && (int)$_POST['selectPhoneCode'] > 0  ? $_POST['selectPhoneCode'] : "NULL";
@@ -158,7 +158,8 @@
                     $_SESSION['user_lname'] = $lname;
                 }
                     
-                $userProfileQuery = "INSERT INTO userprofiledetails (UserID,DOB,GenderID,PhoneNumber_CountryID,PhoneNumber,AddressLine1,AddressLine2,City,State,ZipCode,CountryID,University,College,CreatedDate,CreatedBy,ModifiedDate,ModifiedBy,IsActive) VALUES (".$_SESSION['user_id'].",'".$dateOfBirth."',".$gender.",".$phoneCode.",".$phoneNo.",'".$addFirstLine."','".$addSecondLine."','".$city."','".$state."','".$zipCode."','".$country."','".$userUniversity."','".$userCollege."',NOW(),".$_SESSION['user_id'].",NOW(),".$_SESSION['user_id'].",1) " ;
+                $userProfileQuery = "INSERT INTO userprofiledetails (UserID,DOB,GenderID,PhoneNumber_CountryID,PhoneNumber,AddressLine1,AddressLine2,City,State,ZipCode,CountryID,University,College,CreatedDate,CreatedBy,ModifiedDate,ModifiedBy,IsActive) VALUES (".$_SESSION['user_id'].",".$dateOfBirth.",".$gender.",".$phoneCode.",".$phoneNo.",'".$addFirstLine."','".$addSecondLine."','".$city."','".$state."','".$zipCode."','".$country."','".$userUniversity."','".$userCollege."',NOW(),".$_SESSION['user_id'].",NOW(),".$_SESSION['user_id'].",1) " ;
+                    
                 
                 $current_user_profile_id = $db_handle->insertQuery($userProfileQuery);
                     
@@ -223,7 +224,7 @@
                     $_SESSION['user_lname'] = $lname;
                     
                     }
-                    $updateProfileQuery = "UPDATE userprofiledetails SET DOB ='".$dateOfBirth."' ,GenderID =".$gender." ,PhoneNumber_CountryID =".$phoneCode." ,PhoneNumber ='".$phoneNo."' ,AddressLine1 ='".$addFirstLine."' ,AddressLine2 ='".$addSecondLine."' ,City ='".$city."' ,State ='".$state."' ,ZipCode ='".$zipCode."' ,CountryID =".$country." ,University ='".$userUniversity."' ,College ='".$userCollege."' WHERE  UserProfileDetailID =".$current_user_profile_id;
+                    $updateProfileQuery = "UPDATE userprofiledetails SET DOB =".$dateOfBirth." ,GenderID =".$gender." ,PhoneNumber_CountryID =".$phoneCode." ,PhoneNumber ='".$phoneNo."' ,AddressLine1 ='".$addFirstLine."' ,AddressLine2 ='".$addSecondLine."' ,City ='".$city."' ,State ='".$state."' ,ZipCode ='".$zipCode."' ,CountryID =".$country." ,University ='".$userUniversity."' ,College ='".$userCollege."' WHERE  UserProfileDetailID =".$current_user_profile_id;
                     
                     $update_profile_id = $db_handle->updateQuery($updateProfileQuery);
                     
@@ -249,6 +250,7 @@
                         
                     $_SESSION['profile_pic'] = $new_Profile_Pic_File_Name;
                     }
+                    header("location:search_note.php");  
                 }
             }
         }
@@ -288,7 +290,7 @@
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" type="text/css" media="all"      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css" />
 
     <!--Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">

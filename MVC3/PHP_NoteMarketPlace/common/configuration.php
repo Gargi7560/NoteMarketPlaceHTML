@@ -66,12 +66,7 @@
     $http_protocol = "http://";
     //$uploadPath = $_SERVER["DOCUMENT_ROOT"].$basePath."/user/UploadedFiles/Members/";
 
-	/*Admin Folder Path*/
-	//$adminUploadPath =  $_SERVER["DOCUMENT_ROOT"].$basePath."/admin/UploadedFiles/Admin/";
-
-    /*Default Image Path*/
-    //$defaultImagePath =  $_SERVER["DOCUMENT_ROOT"].$basePath."/common/Default/";
-
+    /*User Folder Path*/
     $uploadPath = "../user/UploadedFiles/Members/";
 
 	/*Admin Folder Path*/

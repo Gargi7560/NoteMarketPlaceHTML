@@ -35,7 +35,7 @@
             
             $emailResult = $db_handle->runQuery($emailQuery);
             
-            var_dump($emailResult);
+            //var_dump($emailResult);
             
             if(!empty($emailResult)){
                 $body = "";

@@ -88,22 +88,22 @@
     function noteReview(noteID) {
         $('#reviewPopup').modal('show');
         $('#hdnNoteID').val(noteID);
-         $('#starRate').jsRapStar({
-        step: false,
-        value: 0,
-        length: 5,
-        starHeight: 50,
-        colorFront: '##f0c420 ',
-        onClick: function(score) {
-            this.StarF.css({
-                color: '#f0c420'
-            });
-            $('#hdbStarRatingValue').val(score);
-        },
-        onMousemove: function(score) {
-            $(this).attr('title', 'Rate ' + score);
-        }
-    });
+        $('#starRate').jsRapStar({
+            step: false,
+            value: 0,
+            length: 5,
+            starHeight: 50,
+            colorFront: '#f0c420',
+            onClick: function(score) {
+                this.StarF.css({
+                    color: '#f0c420'
+                });
+                $('#hdbStarRatingValue').val(score);
+            },
+            onMousemove: function(score) {
+                $(this).attr('title', 'Rate ' + score);
+            }
+        });
     }
     function submitNoteReview() {
         
